@@ -137,18 +137,19 @@
             overflow: hidden;
         }
 
-        .btn-primary {
-            background: var(--green-dark);
-            color: white;
-            box-shadow: var(--shadow-light);
+      .btn-primary {
+        background: var(--green-dark);
+        color: #ffffff !important; /* Força o texto a ficar branco */
+        box-shadow: var(--shadow-light);
+        text-decoration: none;
         }
 
-        .btn-primary:hover {
-            background: var(--green-darker);
-            transform: translateY(-2px);
-            color: #ffffff;
-            box-shadow: var(--shadow-medium);
-        }
+       .btn-primary:hover {
+        background: var(--green-darker);
+        color: #ffffff !important; /* Mantém o texto branco no hover */
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-medium);
+}
 
         .mobile-menu {
             display: none;
