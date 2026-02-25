@@ -128,9 +128,15 @@
 
         /* About CO.cria */
         .section { max-width: 1400px; margin: 0 auto; padding: 5rem 2rem; }
-        .about-cocria-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .about-cocria-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         .about-cocria-text { background: var(--cream); padding: 2.5rem; border-radius: 2px; margin-top: 1.5rem; }
-        .about-cocria-visual img { width: 220px; border-radius: 12px; }
+        
+        /* AJUSTE NA IMAGEM DA GESTORA (SOBRE) */
+        .about-cocria-visual img { 
+            width: 180px; /* Reduzi de 220px para 180px */
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
 
         /* Quem Somos */
         .quem-somos { background: linear-gradient(135deg, var(--secondary) 0%, #234e1a 100%); color: white; padding: 5rem 2rem; }
@@ -146,9 +152,15 @@
         .network-card-body { padding: 2.5rem 2rem; }
         .network-card-icon { font-size: 3rem; margin-bottom: 1rem; }
 
-        /* Leader */
+        /* AJUSTE NA IMAGEM DA LIDERANÇA */
         .leader-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .leader-image img { width: 100%; border-radius: 2px; }
+        .leader-image { text-align: center; }
+        .leader-image img { 
+            width: 100%; 
+            max-width: 400px; /* Limitei o tamanho máximo para não ficar gigante no desktop */
+            border-radius: 4px; 
+            margin: 0 auto;
+        }
         .leader-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
 
         /* Benefits */
@@ -196,18 +208,21 @@
             .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
             .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-            h1 { font-size: 2.5rem; }
-            .hero-top-title { font-size: 2.5rem; }
+            h1 { font-size: 2.2rem; }
+            .hero-top-title { font-size: 2.2rem; }
             .decorator-line { width: 40px; }
             .hero-cta { flex-direction: column; }
             
             .banner-content, .about-cocria-container, .leader-container, .network-grid {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
+                text-align: center;
             }
             .banner-visual { order: -1; }
+            .leader-image img { max-width: 300px; } /* Ainda menor no celular para facilitar o scroll */
             .main-banner { margin: 1.5rem; padding: 2.5rem 1.5rem; }
             .banner-highlight { flex-direction: column; }
+            .about-cocria-visual { order: -1; margin-bottom: 1rem; }
         }
         body.nav-locked { overflow: hidden; }
     </style>
@@ -216,7 +231,7 @@
 
     <nav id="siteNav">
         <div class="nav-container">
-            <a href="#" class="logo">CO<span>.</span>cria</a>
+            <a href="#" class="logo">CO<span>.</span>crie</a>
             <button class="nav-toggle" id="menuBtn">
                 <span></span><span></span><span></span>
             </button>
@@ -317,7 +332,7 @@
             </div>
             <div class="leader-content">
                 <h2>Liderança com Visão</h2>
-                <p>Nossa gestora traz anos de experiência em design e inovação, liderando o CO.cria para conectar os melhores profissionais do mercado.</p>
+                <p>Nossa gestora traz anos de experiência em design e inovação, liderando o CO.crie para conectar os melhores profissionais do mercado.</p>
                 <div class="leader-name">
                     <div>Rogéria Lima</div>
                     <div style="color:var(--secondary); font-size:1rem;">Diretora & Fundadora, Espelhos Home</div>
@@ -349,7 +364,7 @@
     </section>
 
     <footer>
-        <p>© 2024 CO.crie - Espelhos Home. Programa em parceria com <a href="#">Cashing</a>.</p>
+        <p>© 2024 CO.cria - Espelhos Home. Programa em parceria com <a href="#">Cashing</a>.</p>
     </footer>
 
     <script>
