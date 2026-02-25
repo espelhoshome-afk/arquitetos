@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CO.cria - Programa Exclusivo para Arquitetos | Espelhos Home</title>
+    <title>CO.crie - Programa Exclusivo para Arquitetos | Espelhos Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -23,7 +23,7 @@
             --gold: #c9a87b;
         }
 
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
         body {
             font-family: 'Montserrat', sans-serif;
             background: var(--light-bg);
@@ -36,7 +36,7 @@
         h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 600; line-height: 1.1; margin-bottom: 1.5rem; }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; margin-bottom: 1.5rem; }
         h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
-        p { font-size: 1rem; color: var(--text-secondary); font-weight: 300; }
+        p { font-size: 1.05rem; color: var(--text-secondary); font-weight: 300; }
 
         /* Navigation */
         nav {
@@ -50,7 +50,7 @@
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -59,55 +59,49 @@
         .logo span { color: var(--secondary); }
         
         .nav-links { display: flex; gap: 2.5rem; align-items: center; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-primary); font-size: 0.9rem; font-weight: 400; transition: 0.3s; }
+        .nav-links a { text-decoration: none; color: var(--text-primary); font-size: 0.95rem; font-weight: 400; transition: 0.3s; }
         .nav-links a:hover { color: var(--secondary); }
 
         .btn-primary {
             background: var(--primary);
             color: white !important;
-            padding: 0.7rem 1.5rem;
-            border-radius: 2px;
+            padding: 0.8rem 2rem;
+            border-radius: 1px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             transition: 0.3s;
-            border: 1px solid var(--primary);
+            border: 1.5px solid var(--primary);
         }
         .btn-primary:hover { background: transparent; color: var(--primary) !important; }
 
-        .btn-secondary {
-            padding: 0.7rem 1.5rem;
-            border: 1px solid var(--primary);
-            text-decoration: none;
-            color: var(--primary);
-            transition: 0.3s;
-        }
-        .btn-secondary:hover { background: var(--primary); color: white; }
-
         /* Hero */
         .hero {
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 2rem 50px;
+            padding: 120px 2rem 50px;
             background: linear-gradient(135deg, var(--cream) 0%, #f8f6f3 100%);
         }
-        .hero-content { max-width: 850px; }
-        .hero-top-title { font-size: 3rem; font-family: 'Playfair Display', serif; }
-        .hero-top-subtitle { letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin: 1rem 0; color: var(--secondary); }
-        .hero-cta { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .hero-content { max-width: 900px; }
+        .hero-decorator { display: flex; align-items: center; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+        .decorator-line { width: 80px; height: 2px; background: var(--secondary); }
+        .hero-top-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 600; }
+        .hero-top-subtitle { font-size: 0.95rem; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 1rem; }
+        .hero-cta { display: flex; gap: 1.5rem; justify-content: center; margin-top: 2.5rem; }
 
         /* Main Banner */
         .main-banner {
-            background: var(--secondary);
+            background: linear-gradient(135deg, var(--secondary) 0%, #234e1a 100%);
             color: white;
             padding: 4rem 2rem;
-            margin: 2rem;
-            border-radius: 4px;
+            margin: 3rem 2rem;
+            border-radius: 2px;
+            box-shadow: 0 20px 60px rgba(46, 60, 35, 0.15);
         }
         .banner-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -115,50 +109,61 @@
             align-items: center;
         }
         .banner-text h2 { color: white; }
-        .banner-text p { color: #eee; margin-bottom: 2rem; }
+        .banner-text p { color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
         .banner-highlight { display: flex; gap: 2rem; }
-        .highlight-item strong { display: block; font-size: 1.8rem; color: var(--gold); }
-        .banner-visual img { width: 100%; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .highlight-item { flex: 1; padding: 1.5rem; background: rgba(255,255,255,0.1); border-left: 2px solid var(--gold); }
+        .highlight-item strong { display: block; font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .banner-visual img { width: 100%; border-radius: 2px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); transition: 0.3s; }
 
-        /* Sections General */
-        .section { padding: 5rem 2rem; max-width: 1400px; margin: 0 auto; }
-        
         /* Stats */
         .stats { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
         .stats-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
             margin: 0 auto;
         }
-        .stat-number { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold); }
+        .stat-number { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); margin-bottom: 0.5rem; }
 
-        /* About & Leader */
-        .about-cocria-container, .leader-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        .about-cocria-text { background: var(--cream); padding: 2rem; border-radius: 4px; }
-        .leader-image img { width: 100%; border-radius: 4px; }
+        /* About CO.cria */
+        .section { max-width: 1400px; margin: 0 auto; padding: 5rem 2rem; }
+        .about-cocria-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .about-cocria-text { background: var(--cream); padding: 2.5rem; border-radius: 2px; margin-top: 1.5rem; }
+        .about-cocria-visual img { width: 220px; border-radius: 12px; }
 
-        /* Benefits Grid */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        .benefit-item { padding: 2rem; border: 1px solid var(--border); border-left: 4px solid var(--secondary); background: #fff; }
+        /* Quem Somos */
+        .quem-somos { background: linear-gradient(135deg, var(--secondary) 0%, #234e1a 100%); color: white; padding: 5rem 2rem; }
+        .quem-somos-container { max-width: 1000px; margin: 0 auto; }
+        .quem-somos-text { font-size: 1.1rem; line-height: 1.9; color: rgba(255,255,255,0.9); font-style: italic; margin-bottom: 1.5rem; }
 
-        /* CTA Section */
-        .cta-section { background: var(--primary); color: white; padding: 6rem 2rem; text-align: center; }
-        .btn-white { background: white; color: var(--primary); padding: 1rem 2rem; text-decoration: none; font-weight: 600; display: inline-block; margin: 10px; }
+        /* Network */
+        .network-header { text-align: center; margin-bottom: 4rem; }
+        .network-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+        .network-card { border: 1px solid var(--border); transition: 0.4s; background: white; }
+        .network-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(45,134,89,0.12); }
+        .network-card-header { background: var(--secondary); padding: 2.5rem 2rem; color: white; }
+        .network-card-body { padding: 2.5rem 2rem; }
+        .network-card-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+        /* Leader */
+        .leader-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .leader-image img { width: 100%; border-radius: 2px; }
+        .leader-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+
+        /* Benefits */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
+        .benefit-item { padding: 2rem; border-left: 3px solid var(--secondary); background: white; transition: 0.3s; }
+        .benefit-item:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(0,0,0,0.06); }
+
+        /* CTA */
+        .cta-section { background: var(--primary); color: white; text-align: center; padding: 6rem 2rem; }
+        .btn-white { background: white; color: var(--primary); padding: 1rem 2.5rem; text-decoration: none; font-weight: 500; display: inline-block; }
+        .features-list { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; color: #bbb; }
+        .features-list span::before { content: '✦ '; color: var(--gold); }
 
         /* Footer */
-        footer { padding: 3rem; background: #000; color: #666; text-align: center; font-size: 0.85rem; }
+        footer { background: #050505; color: #888; padding: 3rem 2rem; text-align: center; }
         footer a { color: var(--gold); text-decoration: none; }
 
         /* MOBILE FIXES */
@@ -174,35 +179,37 @@
         .nav-toggle span { width: 25px; height: 2px; background: var(--primary); transition: 0.3s; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
+            .nav-container { padding: 1rem 1.5rem; }
             .nav-toggle { display: flex; }
-            
             .nav-links {
                 position: fixed;
                 top: 0; right: -100%;
-                width: 280px; height: 100vh;
+                width: 80%; height: 100vh;
                 background: white;
                 flex-direction: column;
                 padding: 100px 2rem;
                 transition: 0.4s;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
             }
             .nav-open .nav-links { right: 0; }
             .nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
             .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
             .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+            h1 { font-size: 2.5rem; }
+            .hero-top-title { font-size: 2.5rem; }
+            .decorator-line { width: 40px; }
             .hero-cta { flex-direction: column; }
-            .banner-content, .about-cocria-container, .leader-container { grid-template-columns: 1fr; gap: 2rem; }
+            
+            .banner-content, .about-cocria-container, .leader-container, .network-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
             .banner-visual { order: -1; }
-            .main-banner { margin: 1rem; padding: 2rem 1rem; }
-            .banner-highlight { flex-direction: column; gap: 1rem; }
-            .section { padding: 3rem 1.5rem; }
+            .main-banner { margin: 1.5rem; padding: 2.5rem 1.5rem; }
+            .banner-highlight { flex-direction: column; }
         }
-        
-        /* Previne scroll quando menu aberto */
-        body.no-scroll { overflow: hidden; }
+        body.nav-locked { overflow: hidden; }
     </style>
 </head>
 <body>
@@ -215,6 +222,7 @@
             </button>
             <ul class="nav-links">
                 <li><a href="#como-funciona">Como Funciona</a></li>
+                <li><a href="#network">Network</a></li>
                 <li><a href="#beneficios">Benefícios</a></li>
                 <li><a href="#cta">Começar</a></li>
                 <li><a href="https://influencers.cashing.com.br/espelhoshome" class="btn-primary">Entrar</a></li>
@@ -224,12 +232,16 @@
 
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-top-subtitle">Programa Exclusivo para Arquitetos</p>
+            <div class="hero-decorator">
+                <div class="decorator-line"></div>
+                <h2 class="hero-top-title">CO<span>.</span>crie</h2>
+                <div class="decorator-line"></div>
+            </div>
+            <p class="hero-top-subtitle">Programa Exclusivo para Arquitetos e Designers</p>
             <h1>Transforme Ambientes com Elegância</h1>
-            <p>Uma curadoria exclusiva de espelhos para profissionais que não abrem mão da sofisticação.</p>
             <div class="hero-cta">
-                <a href="https://influencers.cashing.com.br/espelhoshome" class="btn-primary">Quero Participar</a>
-                <a href="#como-funciona" class="btn-secondary">Ver Detalhes</a>
+                <a href="https://influencers.cashing.com.br/espelhoshome" class="btn-primary">Começar Agora</a>
+                <a href="#como-funciona" class="btn-primary" style="background:transparent; color:var(--primary)!important;">Saiba Como Funciona</a>
             </div>
         </div>
     </section>
@@ -238,32 +250,23 @@
         <div class="banner-content">
             <div class="banner-text">
                 <h2>Excelência em Cada Projeto</h2>
-                <p>Seja parte de um grupo seleto de designers que utilizam a Espelhos Home para elevar o nível de suas entregas.</p>
+                <p>Faça parte de uma rede seleta de profissionais que transformam espaços com propósito e visão estratégica.</p>
                 <div class="banner-highlight">
-                    <div class="highlight-item"><strong>500+</strong><span>Parceiros</span></div>
-                    <div class="highlight-item"><strong>1.2k+</strong><span>Projetos</span></div>
+                    <div class="highlight-item"><strong>500+</strong><span>Arquitetos Parceiros</span></div>
+                    <div class="highlight-item"><strong>1.2k+</strong><span>Projetos Realizados</span></div>
                 </div>
             </div>
             <div class="banner-visual">
-                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/WhatsApp%20Image%202026-02-24%20at%2016.54.13.jpeg" alt="Ambiente Decorado">
+                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/WhatsApp%20Image%202026-02-24%20at%2016.54.13.jpeg" alt="Banner">
             </div>
         </div>
     </div>
 
     <section class="stats">
         <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number">47+</div>
-                <div class="stat-label">Projetos Ativos</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">152+</div>
-                <div class="stat-label">Clientes Felizes</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Qualidade Premium</div>
-            </div>
+            <div class="stat-item"><div class="stat-number">47+</div><div class="stat-label">Projetos Ativos</div></div>
+            <div class="stat-item"><div class="stat-number">152+</div><div class="stat-label">Clientes Satisfeitos</div></div>
+            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Satisfação Garantida</div></div>
         </div>
     </section>
 
@@ -272,12 +275,37 @@
             <div class="about-cocria-content">
                 <h2>O que é o CO.cria</h2>
                 <div class="about-cocria-text">
-                    <p>É o braço de parceria da <strong>Espelhos Home</strong>. Você indica nossas peças, seu cliente compra com segurança e você recebe uma remuneração técnica por cada venda.</p>
-                    <p>Simples, transparente e focado em valorizar o seu trabalho de especificação.</p>
+                    <p>O CO.cria nasceu como um gesto de reconhecimento para valorizar os profissionais que indicam nossos produtos.</p>
+                    <p>Você indica ao seu cliente, ele compra direto no site, e você recebe uma Remuneração Técnica por cada venda concluída.</p>
                 </div>
             </div>
             <div class="about-cocria-visual" style="text-align: center;">
-                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/image%20(18).png" alt="App" style="max-width: 250px;">
+                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/image%20(18).png" alt="Gestora">
+            </div>
+        </div>
+    </section>
+
+    <section class="quem-somos">
+        <div class="quem-somos-container">
+            <h2>Quem Somos</h2>
+            <p class="quem-somos-text">A Espelhos Home nasceu com o propósito de transformar ambientes através de peças exclusivas que unem design, qualidade e propósito.</p>
+            <p class="quem-somos-text">Mais do que produtos, oferecemos uma curadoria que valoriza a arquitetura e a criação de cenários que acolhem e inspiram.</p>
+        </div>
+    </section>
+
+    <section class="section" id="network">
+        <div class="network-header">
+            <h2>Nossa Rede de Valor</h2>
+            <p>Conecte-se com profissionais de excelência e expanda seu portfólio.</p>
+        </div>
+        <div class="network-grid">
+            <div class="network-card">
+                <div class="network-card-header">Comunidade Profissional</div>
+                <div class="network-card-body">
+                    <div class="network-card-icon">👥</div>
+                    <h3>Networking Exclusivo</h3>
+                    <p>Encontre-se com arquitetos de renome e crie parcerias que impulsionam sua carreira.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -289,40 +317,39 @@
             </div>
             <div class="leader-content">
                 <h2>Liderança com Visão</h2>
-                <p>Sob a curadoria de <strong>Rogéria Lima</strong>, a Espelhos Home se tornou referência em unir a funcionalidade do espelho à estética da alta decoração.</p>
-                <p><em>"Nosso objetivo é facilitar a vida do arquiteto, entregando um produto que seja a joia do ambiente."</em></p>
+                <p>Nossa gestora traz anos de experiência em design e inovação, liderando o CO.crie para conectar os melhores profissionais do mercado.</p>
+                <div class="leader-name">
+                    <div>Rogéria Lima</div>
+                    <div style="color:var(--secondary); font-size:1rem;">Diretora & Fundadora, Espelhos Home</div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="section" id="beneficios">
-        <h2 style="text-align: center;">Benefícios Exclusivos</h2>
+        <h2 style="text-align: center; margin-bottom: 3rem;">Benefícios Exclusivos</h2>
         <div class="benefits-grid">
-            <div class="benefit-item">
-                <h3>✦ Produtos Premium</h3>
-                <p>Acesso a peças que não são encontradas no varejo comum.</p>
-            </div>
-            <div class="benefit-item">
-                <h3>✦ Suporte VIP</h3>
-                <p>Atendimento prioritário para tirar dúvidas técnicas de instalação.</p>
-            </div>
-            <div class="benefit-item">
-                <h3>✦ Dashboard</h3>
-                <p>Controle total de suas indicações e prêmios em tempo real.</p>
-            </div>
+            <div class="benefit-item"><h3>✦ Produtos Premium</h3><p>Espelhos decorativos de alta qualidade com design exclusivo.</p></div>
+            <div class="benefit-item"><h3>✦ Reconhecimento</h3><p>Faça parte de uma rede seleta de arquitetos parceiros.</p></div>
+            <div class="benefit-item"><h3>✦ Suporte Especializado</h3><p>Equipe técnica dedicada para auxiliar em seus projetos.</p></div>
         </div>
     </section>
 
     <section class="cta-section" id="cta">
-        <h2>Pronto para elevar seus projetos?</h2>
-        <p>O cadastro é gratuito e leva menos de 2 minutos.</p>
-        <div style="margin-top: 2rem;">
-            <a href="https://influencers.cashing.com.br/espelhoshome" class="btn-white">Criar Conta Agora</a>
+        <h2>Pronto para Fazer Parte?</h2>
+        <p>Junte-se a uma comunidade de arquitetos de excelência.</p>
+        <div style="margin-top:2rem;">
+            <a href="https://influencers.cashing.com.br/espelhoshome" class="btn-white">Criar Conta Gratuita</a>
+        </div>
+        <div class="features-list">
+            <span>Sem taxa de inscrição</span>
+            <span>Comece hoje mesmo</span>
+            <span>Suporte completo</span>
         </div>
     </section>
 
     <footer>
-        <p>© 2024 CO.cria - Espelhos Home. Em parceria com Cashing.</p>
+        <p>© 2024 CO.crie - Espelhos Home. Programa em parceria com <a href="#">Cashing</a>.</p>
     </footer>
 
     <script>
@@ -331,14 +358,14 @@
         const links = document.querySelectorAll('.nav-links a');
 
         menuBtn.addEventListener('click', () => {
-            siteNav.classList.toggle('nav-open');
-            document.body.classList.toggle('no-scroll');
+            const isOpen = siteNav.classList.toggle('nav-open');
+            document.body.classList.toggle('nav-locked', isOpen);
         });
 
         links.forEach(link => {
             link.addEventListener('click', () => {
                 siteNav.classList.remove('nav-open');
-                document.body.classList.remove('no-scroll');
+                document.body.classList.remove('nav-locked');
             });
         });
     </script>
