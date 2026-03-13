@@ -32,17 +32,20 @@
             overflow-x: hidden;
         }
 
-        /* Typography */
-        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 600; line-height: 1.1; margin-bottom: 1.5rem; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; margin-bottom: 1.5rem; }
-        h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
-        p { font-size: 1.05rem; color: var(--text-secondary); font-weight: 300; }
+        /* ── Prevent horizontal scroll globally ── */
+        img { max-width: 100%; height: auto; display: block; }
 
-        /* Navigation */
+        /* Typography */
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 3.5rem); font-weight: 600; line-height: 1.2; margin-bottom: 1.5rem; }
+        h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 600; margin-bottom: 1.5rem; }
+        h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem; }
+        p { font-size: 1rem; color: var(--text-secondary); font-weight: 300; }
+
+        /* ── Navigation ── */
         nav {
             position: fixed;
             top: 0; width: 100%;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255,255,255,0.98);
             backdrop-filter: blur(10px);
             z-index: 10000;
             border-bottom: 1px solid var(--border);
@@ -57,7 +60,7 @@
         }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; color: var(--primary); text-decoration: none; }
         .logo span { color: var(--secondary); }
-        
+
         .nav-links { display: flex; gap: 2.5rem; align-items: center; list-style: none; }
         .nav-links a { text-decoration: none; color: var(--text-primary); font-size: 0.95rem; font-weight: 400; transition: 0.3s; }
         .nav-links a:hover { color: var(--secondary); }
@@ -74,31 +77,32 @@
         }
         .btn-primary:hover { background: transparent; color: var(--primary) !important; }
 
-        /* Hero */
+        /* ── Hero ── */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 2rem 50px;
+            padding: 140px 1.5rem 60px;
             background: linear-gradient(135deg, var(--cream) 0%, #f8f6f3 100%);
         }
-        .hero-content { max-width: 900px; }
-        .hero-decorator { display: flex; align-items: center; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
-        .decorator-line { width: 80px; height: 2px; background: var(--secondary); }
-        .hero-top-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 600; }
-        .hero-top-subtitle { font-size: 0.95rem; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 1rem; }
-        .hero-cta { display: flex; gap: 1.5rem; justify-content: center; margin-top: 2.5rem; }
+        .hero-content { max-width: 900px; width: 100%; }
+        .hero-decorator { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .decorator-line { width: 60px; height: 2px; background: var(--secondary); flex-shrink: 0; }
+        .hero-top-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 600; }
+        .hero-top-subtitle { font-size: 0.85rem; color: var(--text-secondary); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 1rem; }
+        .hero-cta { display: flex; gap: 1rem; justify-content: center; margin-top: 2.5rem; flex-wrap: wrap; }
+        .hero-cta a { text-align: center; flex: 0 1 auto; }
 
-        /* Main Banner */
+        /* ── Main Banner ── */
         .main-banner {
             background: linear-gradient(135deg, var(--secondary) 0%, #234e1a 100%);
             color: white;
             padding: 4rem 2rem;
             margin: 3rem 2rem;
             border-radius: 2px;
-            box-shadow: 0 20px 60px rgba(46, 60, 35, 0.15);
+            box-shadow: 0 20px 60px rgba(46,60,35,0.15);
         }
         .banner-content {
             max-width: 1400px;
@@ -110,75 +114,82 @@
         }
         .banner-text h2 { color: white; }
         .banner-text p { color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
-        .banner-highlight { display: flex; gap: 2rem; }
-        .highlight-item { flex: 1; padding: 1.5rem; background: rgba(255,255,255,0.1); border-left: 2px solid var(--gold); }
+        .banner-highlight { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .highlight-item { flex: 1; min-width: 130px; padding: 1.5rem; background: rgba(255,255,255,0.1); border-left: 2px solid var(--gold); }
         .highlight-item strong { display: block; font-size: 1.5rem; margin-bottom: 0.5rem; }
-        .banner-visual img { width: 100%; border-radius: 2px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); transition: 0.3s; }
+        .banner-visual img { width: 100%; border-radius: 2px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
 
-        /* Stats */
+        /* ── Stats ── */
         .stats { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
         .stats-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
             max-width: 1400px;
             margin: 0 auto;
         }
-        .stat-number { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold); margin-bottom: 0.5rem; }
+        .stat-number { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); color: var(--gold); margin-bottom: 0.5rem; }
 
-        /* About CO.cria */
-        .section { max-width: 1400px; margin: 0 auto; padding: 5rem 2rem; }
+        /* ── Section wrapper ── */
+        .section { max-width: 1400px; margin: 0 auto; padding: 5rem 1.5rem; }
+
+        /* ── About CO.cria ── */
         .about-cocria-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         .about-cocria-text { background: var(--cream); padding: 2.5rem; border-radius: 2px; margin-top: 1.5rem; }
-        
-        /* AJUSTE NA IMAGEM DA GESTORA (SOBRE) */
-        .about-cocria-visual img { 
-            width: 520px; /* Reduzi de 220px para 180px */
-            border-radius: 12px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        .about-cocria-visual { text-align: center; }
+        .about-cocria-visual img {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
-        /* Quem Somos */
+        /* ── Quem Somos ── */
         .quem-somos { background: linear-gradient(135deg, var(--secondary) 0%, #234e1a 100%); color: white; padding: 5rem 2rem; }
         .quem-somos-container { max-width: 1000px; margin: 0 auto; }
         .quem-somos-text { font-size: 1.1rem; line-height: 1.9; color: rgba(255,255,255,0.9); font-style: italic; margin-bottom: 1.5rem; }
+        .quem-somos h2 { color: white; }
 
-        /* Network */
+        /* ── Network ── */
         .network-header { text-align: center; margin-bottom: 4rem; }
-        .network-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+        .network-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
         .network-card { border: 1px solid var(--border); transition: 0.4s; background: white; }
         .network-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(45,134,89,0.12); }
-        .network-card-header { background: var(--secondary); padding: 2.5rem 2rem; color: white; }
-        .network-card-body { padding: 2.5rem 2rem; }
-        .network-card-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .network-card-header { background: var(--secondary); padding: 2rem 1.5rem; color: white; font-weight: 500; }
+        .network-card-body { padding: 2rem 1.5rem; }
+        .network-card-icon { font-size: 2.5rem; margin-bottom: 1rem; }
 
-        /* AJUSTE NA IMAGEM DA LIDERANÇA */
+        /* ── Leader ── */
         .leader-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         .leader-image { text-align: center; }
-        .leader-image img { 
-            width: 100%; 
-            max-width: 400px; /* Limitei o tamanho máximo para não ficar gigante no desktop */
-            border-radius: 4px; 
+        .leader-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 4px;
             margin: 0 auto;
         }
-        .leader-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        .leader-content p { margin-bottom: 1rem; }
+        .leader-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 600; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
 
-        /* Benefits */
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; }
+        /* ── Benefits ── */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; }
         .benefit-item { padding: 2rem; border-left: 3px solid var(--secondary); background: white; transition: 0.3s; }
         .benefit-item:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(0,0,0,0.06); }
 
-        /* CTA */
+        /* ── CTA ── */
         .cta-section { background: var(--primary); color: white; text-align: center; padding: 6rem 2rem; }
+        .cta-section h2 { color: white; }
+        .cta-section p { color: rgba(255,255,255,0.8); }
         .btn-white { background: white; color: var(--primary); padding: 1rem 2.5rem; text-decoration: none; font-weight: 500; display: inline-block; }
-        .features-list { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; color: #bbb; }
+        .features-list { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 3rem; color: #bbb; }
         .features-list span::before { content: '✦ '; color: var(--gold); }
 
-        /* Footer */
+        /* ── Footer ── */
         footer { background: #050505; color: #888; padding: 3rem 2rem; text-align: center; }
         footer a { color: var(--gold); text-decoration: none; }
 
-        /* MOBILE FIXES */
+        /* ── Hamburger ── */
         .nav-toggle {
             display: none;
             flex-direction: column;
@@ -187,10 +198,16 @@
             border: none;
             cursor: pointer;
             z-index: 10002;
+            padding: 4px;
         }
-        .nav-toggle span { width: 25px; height: 2px; background: var(--primary); transition: 0.3s; }
+        .nav-toggle span { width: 25px; height: 2px; background: var(--primary); transition: 0.3s; display: block; }
 
+        /* ══════════════════════════════
+           MOBILE — max-width: 768px
+        ══════════════════════════════ */
         @media (max-width: 768px) {
+
+            /* Nav */
             .nav-container { padding: 1rem 1.5rem; }
             .nav-toggle { display: flex; }
             .nav-links {
@@ -199,31 +216,69 @@
                 width: 80%; height: 100vh;
                 background: white;
                 flex-direction: column;
-                padding: 100px 2rem;
-                transition: 0.4s;
+                justify-content: center;
+                padding: 6rem 2rem 2rem;
+                transition: right 0.4s ease;
                 box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+                gap: 2rem;
+                z-index: 10001;
             }
             .nav-open .nav-links { right: 0; }
             .nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
             .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
             .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-            h1 { font-size: 2.2rem; }
-            .hero-top-title { font-size: 2.2rem; }
-            .decorator-line { width: 40px; }
-            .hero-cta { flex-direction: column; }
-            
-            .banner-content, .about-cocria-container, .leader-container, .network-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-                text-align: center;
-            }
-            .banner-visual { order: -1; }
-            .leader-image img { max-width: 300px; } /* Ainda menor no celular para facilitar o scroll */
+            /* Hero */
+            .hero { padding: 120px 1.5rem 50px; }
+            .hero-decorator { gap: 1rem; }
+            .decorator-line { width: 30px; }
+            .hero-cta { flex-direction: column; align-items: center; }
+            .hero-cta a { width: 100%; max-width: 300px; }
+
+            /* Banner */
             .main-banner { margin: 1.5rem; padding: 2.5rem 1.5rem; }
+            .banner-content { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .banner-visual { order: -1; }
             .banner-highlight { flex-direction: column; }
-            .about-cocria-visual { order: -1; margin-bottom: 1rem; }
+            .highlight-item { text-align: left; }
+
+            /* About */
+            .about-cocria-container { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .about-cocria-visual { order: -1; }
+            .about-cocria-visual img { max-width: 280px; }
+            .about-cocria-text { text-align: left; padding: 1.5rem; }
+
+            /* Quem Somos */
+            .quem-somos { padding: 3.5rem 1.5rem; }
+
+            /* Network */
+            .network-grid { grid-template-columns: 1fr; }
+
+            /* Leader */
+            .leader-container { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .leader-image { order: -1; }
+            .leader-image img { max-width: 260px; }
+            .leader-content { text-align: left; }
+            .leader-name { text-align: center; }
+
+            /* Benefits */
+            .benefits-grid { grid-template-columns: 1fr; }
+
+            /* Stats */
+            .stats-container { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+            /* Section padding */
+            .section { padding: 3.5rem 1.5rem; }
+
+            /* Features list */
+            .features-list { flex-direction: column; align-items: center; gap: 0.75rem; }
         }
+
+        @media (max-width: 400px) {
+            .stats-container { grid-template-columns: 1fr; }
+            .about-cocria-visual img { max-width: 220px; }
+        }
+
         body.nav-locked { overflow: hidden; }
     </style>
 </head>
@@ -232,10 +287,10 @@
     <nav id="siteNav">
         <div class="nav-container">
             <a href="#" class="logo">CO<span>.</span>cria</a>
-            <button class="nav-toggle" id="menuBtn">
+            <button class="nav-toggle" id="menuBtn" aria-label="Abrir menu">
                 <span></span><span></span><span></span>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#como-funciona">Como Funciona</a></li>
                 <li><a href="#network">Network</a></li>
                 <li><a href="#beneficios">Benefícios</a></li>
@@ -260,33 +315,29 @@
             </div>
         </div>
     </section>
-    
+
     <section class="section about-cocria" id="como-funciona">
         <div class="about-cocria-container">
             <div class="about-cocria-content">
                 <h2>O que é o CO.cria</h2>
                 <div class="about-cocria-text">
-                    <p>O CO.crie é o programa oficial de parceria da Espelhos Home, desenvolvido especialmente para arquitetos, designers de interiores e profissionais da área que buscam agregar mais sofisticação, qualidade e exclusividade aos seus projetos.
-
-Criado com o objetivo de fortalecer a relação entre a marca e os profissionais do setor, o programa nasce como uma forma de reconhecer, valorizar e incentivar aqueles que confiam e indicam os produtos da Espelhos Home em seus projetos.
-
-Por meio do CO.crie, estabelecemos uma parceria baseada em colaboração, reconhecimento e crescimento mútuo, oferecendo benefícios exclusivos, suporte dedicado e condições especiais para profissionais que utilizam nossos produtos em seus ambientes.
-
-Acreditamos que grandes projetos nascem da união entre design, criatividade e materiais de alta qualidade. Por isso, o CO.crie é mais do que um programa de parceria — é um espaço para criar, conectar e transformar ideias em ambientes únicos, levando elegância e personalidade para cada projeto.
-
-Na Espelhos Home, valorizamos o olhar criativo dos profissionais e temos orgulho de fazer parte de projetos que transformam espaços e experiências.</p>
+                    <p>O CO.cria é o programa oficial de parceria da Espelhos Home, desenvolvido especialmente para arquitetos, designers de interiores e profissionais da área que buscam agregar mais sofisticação, qualidade e exclusividade aos seus projetos.</p>
+                    <br>
+                    <p>Criado com o objetivo de fortalecer a relação entre a marca e os profissionais do setor, o programa nasce como uma forma de reconhecer, valorizar e incentivar aqueles que confiam e indicam os produtos da Espelhos Home em seus projetos.</p>
+                    <br>
+                    <p>Acreditamos que grandes projetos nascem da união entre design, criatividade e materiais de alta qualidade. O CO.cria é mais do que um programa de parceria — é um espaço para criar, conectar e transformar ideias em ambientes únicos.</p>
                 </div>
             </div>
-            <div class="about-cocria-visual" style="text-align: center;">
-                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/IMG_5456%20(1).JPEG" alt="Gestora">
+            <div class="about-cocria-visual">
+                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/IMG_5456%20(1).JPEG" alt="Gestora CO.cria">
             </div>
         </div>
     </section>
-    
-       <section class="quem-somos">
+
+    <section class="quem-somos">
         <div class="quem-somos-container">
             <h2>Quem Somos</h2>
-            <p class="quem-somos-text">A Espelhos Home nasceu com proposito de transformar ambientes através de peças exclusivas que unem design, qualidade e propósito. </p>
+            <p class="quem-somos-text">A Espelhos Home nasceu com propósito de transformar ambientes através de peças exclusivas que unem design, qualidade e propósito.</p>
             <p class="quem-somos-text">Mais do que produtos, oferecemos uma curadoria que valoriza a arquitetura e a criação de cenários que acolhem e inspiram.</p>
         </div>
     </section>
@@ -302,7 +353,7 @@ Na Espelhos Home, valorizamos o olhar criativo dos profissionais e temos orgulho
                 </div>
             </div>
             <div class="banner-visual">
-                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/pessoas.png" alt="Banner">
+                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/pessoas.png" alt="Equipe Espelhos Home">
             </div>
         </div>
     </div>
@@ -315,7 +366,6 @@ Na Espelhos Home, valorizamos o olhar criativo dos profissionais e temos orgulho
         </div>
     </section>
 
-
     <section class="section" id="network">
         <div class="network-header">
             <h2>Nossa Rede de Valor</h2>
@@ -327,7 +377,7 @@ Na Espelhos Home, valorizamos o olhar criativo dos profissionais e temos orgulho
                 <div class="network-card-body">
                     <div class="network-card-icon">👥</div>
                     <h3>Networking Exclusivo</h3>
-                    <p>Encontre-se com arquitetos de renome e cria parcerias que impulsionam sua carreira.</p>
+                    <p>Encontre-se com arquitetos de renome e crie parcerias que impulsionam sua carreira.</p>
                 </div>
             </div>
         </div>
@@ -340,26 +390,20 @@ Na Espelhos Home, valorizamos o olhar criativo dos profissionais e temos orgulho
             </div>
             <div class="leader-content">
                 <h2>Liderança com Visão</h2>
-                <p><p>Sou Rogéria, Diretora na Espelhos Home e idealizadora do Projeto CO.CRIA,</p>
-                    <p>Minha história  em 2016 iniciou quando comecei a cursar Arquitetura mas os projetos com a maternidade, falaram mais alto, agora como mãe de 3 , esposa e empresária ao longo do caminho, me mostraram  que os ambientes onde vivemos são muito mais do que espaços físicos eles refletem emoções, valores e momentos que guardamos para sempre.</p>
-
-                   <p> A Espelhos Home nasceu dessa visão: transformar cada espelho em uma peça que não apenas compõe a decoração, mas cria cenários que acolhem e inspiram.
-                    Com o CoCria, quis levar essa essência para além dos produtos, construindo uma ponte entre arquitetos, designers e clientes.</p>
-
-                    <p>Esse programa nasceu do desejo de unir talentos criativos a uma marca que valoriza a estética e o significado dos ambientes. Cada indicação feita por você não é apenas uma venda, mas um gesto que conecta histórias, transforma projetos e multiplica experiências.
-
-                    Meu propósito é que, juntos, possamos refletir beleza, confiança e emoção em cada detalhe.”
-</p>
+                <p>Sou Rogéria, Diretora na Espelhos Home e idealizadora do Projeto CO.CRIA.</p>
+                <p>Minha história em 2016 iniciou quando comecei a cursar Arquitetura, mas os projetos com a maternidade falaram mais alto. Agora como mãe de 3, esposa e empresária, o caminho me mostrou que os ambientes onde vivemos são muito mais do que espaços físicos — eles refletem emoções, valores e momentos que guardamos para sempre.</p>
+                <p>A Espelhos Home nasceu dessa visão: transformar cada espelho em uma peça que não apenas compõe a decoração, mas cria cenários que acolhem e inspiram. Com o CO.cria, quis levar essa essência para além dos produtos, construindo uma ponte entre arquitetos, designers e clientes.</p>
+                <p>Esse programa nasceu do desejo de unir talentos criativos a uma marca que valoriza a estética e o significado dos ambientes. Meu propósito é que, juntos, possamos refletir beleza, confiança e emoção em cada detalhe.</p>
                 <div class="leader-name">
                     <div>Rogéria Lima</div>
-                    <div style="color:var(--secondary); font-size:1rem;">Diretora & Fundadora, Espelhos Home</div>
+                    <div style="color:var(--secondary); font-size:0.95rem; font-family:'Montserrat',sans-serif; font-weight:400;">Diretora &amp; Fundadora, Espelhos Home</div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="section" id="beneficios">
-        <h2 style="text-align: center; margin-bottom: 3rem;">Benefícios Exclusivos</h2>
+        <h2 style="text-align:center; margin-bottom:3rem;">Benefícios Exclusivos</h2>
         <div class="benefits-grid">
             <div class="benefit-item"><h3>✦ Produtos Premium</h3><p>Espelhos decorativos de alta qualidade com design exclusivo.</p></div>
             <div class="benefit-item"><h3>✦ Reconhecimento</h3><p>Faça parte de uma rede seleta de arquitetos parceiros.</p></div>
@@ -387,18 +431,29 @@ Na Espelhos Home, valorizamos o olhar criativo dos profissionais e temos orgulho
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const siteNav = document.getElementById('siteNav');
-        const links = document.querySelectorAll('.nav-links a');
+        const links   = document.querySelectorAll('.nav-links a');
 
         menuBtn.addEventListener('click', () => {
             const isOpen = siteNav.classList.toggle('nav-open');
             document.body.classList.toggle('nav-locked', isOpen);
+            menuBtn.setAttribute('aria-expanded', isOpen);
         });
 
         links.forEach(link => {
             link.addEventListener('click', () => {
                 siteNav.classList.remove('nav-open');
                 document.body.classList.remove('nav-locked');
+                menuBtn.setAttribute('aria-expanded', false);
             });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (siteNav.classList.contains('nav-open') &&
+                !siteNav.contains(e.target)) {
+                siteNav.classList.remove('nav-open');
+                document.body.classList.remove('nav-locked');
+            }
         });
     </script>
 </body>
