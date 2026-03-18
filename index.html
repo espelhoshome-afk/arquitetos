@@ -280,6 +280,202 @@
         }
 
         body.nav-locked { overflow: hidden; }
+            * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    body {
+      font-family: 'Georgia', serif;
+      background: #f0ede8;
+    }
+ 
+    /* ── BANNER ── */
+    .main-banner {
+      position: relative;
+      background: #1c1917;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+ 
+    /* Imagem de fundo com overlay */
+    .banner-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+ 
+    .banner-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+      filter: grayscale(20%);
+    }
+ 
+    .banner-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #1c1917 40%, transparent 100%);
+    }
+ 
+    /* Conteúdo interno */
+    .banner-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 3rem 3.5rem;
+    }
+ 
+    /* Lado texto */
+    .banner-text {
+      flex: 1;
+      max-width: 420px;
+    }
+ 
+    .banner-text h2 {
+      font-family: 'Georgia', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: normal;
+      color: #f5f0e8;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+ 
+    .banner-text p {
+      font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+      color: rgba(245, 240, 232, 0.6);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+ 
+    .banner-highlight {
+      display: flex;
+      gap: 2rem;
+    }
+ 
+    .highlight-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+ 
+    .highlight-item strong {
+      font-family: 'Georgia', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+      font-weight: normal;
+      color: #e8d5b0;
+      letter-spacing: -0.02em;
+    }
+ 
+    .highlight-item span {
+      font-size: 0.75rem;
+      color: rgba(245, 240, 232, 0.45);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+ 
+    /* Lado imagens */
+    .banner-visual {
+      position: relative;
+      flex-shrink: 0;
+      width: 280px;
+      height: 240px;
+    }
+ 
+    .img-back {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 220px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+    }
+ 
+    .img-front {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 160px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #1c1917;
+      outline: 1.5px solid rgba(232, 213, 176, 0.3);
+    }
+ 
+    /* ── RESPONSIVO MOBILE ── */
+    @media (max-width: 640px) {
+      .main-banner {
+        border-radius: 12px;
+      }
+ 
+      .banner-bg::after {
+        background: linear-gradient(180deg, transparent 0%, #1c1917 60%);
+      }
+ 
+      .banner-content {
+        flex-direction: column-reverse;
+        padding: 1.75rem 1.5rem 2rem;
+        gap: 1.5rem;
+        align-items: flex-start;
+      }
+ 
+      .banner-text {
+        max-width: 100%;
+      }
+ 
+      .banner-visual {
+        width: 100%;
+        height: 180px;
+        align-self: center;
+      }
+ 
+      .img-back {
+        width: 72%;
+        height: 165px;
+        top: 0;
+        right: 0;
+      }
+ 
+      .img-front {
+        width: 46%;
+        height: 110px;
+        bottom: 0;
+        left: 0;
+      }
+    }
+ 
+    /* ── RESPONSIVO TABLET ── */
+    @media (min-width: 641px) and (max-width: 900px) {
+      .banner-content {
+        padding: 2.5rem 2rem;
+        gap: 1.5rem;
+      }
+ 
+      .banner-visual {
+        width: 220px;
+        height: 200px;
+      }
+ 
+      .img-back {
+        width: 175px;
+        height: 160px;
+      }
+ 
+      .img-front {
+        width: 130px;
+        height: 110px;
+      }
+    }
     </style>
 </head>
 <body>
@@ -321,7 +517,7 @@
             <div class="about-cocria-content">
                 <h2>O que é o CO.cria</h2>
                 <div class="about-cocria-text">
-                    <p>O CO.cria é o programa oficial de parceria da Espelhos Home, desenvolvido especialmente para arquitetos, designers de interiores e profissionais da área que buscam agregar mais sofisticação, qualidade e exclusividade aos seus projetos.</p>
+                    <p>O CO.cria é o programa oficial de parceria da Espelhos Home, desenvolvido especialmente para arquitetos, designers de interiores e profissionais da área que buscam agregar mais elegancia, qualidade e exclusividade aos seus projetos.</p>
                     <br>
                     <p>Criado com o objetivo de fortalecer a relação entre a marca e os profissionais do setor, o programa nasce como uma forma de reconhecer, valorizar e incentivar aqueles que confiam e indicam os produtos da Espelhos Home em seus projetos.</p>
                     <br>
@@ -342,21 +538,50 @@
         </div>
     </section>
 
-    <div class="main-banner">
-        <div class="banner-content">
-            <div class="banner-text">
-                <h2>Excelência em Cada Projeto</h2>
-                <p>Faça parte de uma rede seleta de profissionais que transformam espaços com propósito e visão estratégica.</p>
-                <div class="banner-highlight">
-                    <div class="highlight-item"><strong>500+</strong><span>Arquitetos Parceiros</span></div>
-                    <div class="highlight-item"><strong>1.2k+</strong><span>Projetos Realizados</span></div>
-                </div>
-            </div>
-            <div class="banner-visual">
-                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/pessoas.png" alt="Equipe Espelhos Home">
-            </div>
-        </div>
+   <div class="main-banner">
+ 
+    <!-- Fundo desfocado -->
+    <div class="banner-bg">
+      <img
+        src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/WhatsApp%20Image%202026-03-18%20at%2017.28.57.jpeg"
+        alt=""
+      >
     </div>
+ 
+    <div class="banner-content">
+ 
+      <!-- Texto -->
+      <div class="banner-text">
+        <h2>Excelência em Cada Projeto</h2>
+        <p>Faça parte de uma rede seleta de profissionais que transformam espaços com propósito e visão estratégica.</p>
+        <div class="banner-highlight">
+          <div class="highlight-item">
+            <strong>500+</strong>
+            <span>Arquitetos Parceiros</span>
+          </div>
+          <div class="highlight-item">
+            <strong>1.2k+</strong>
+            <span>Projetos Realizados</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Imagens sobrepostas -->
+      <div class="banner-visual">
+        <img
+          class="img-back"
+          src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/WhatsApp%20Image%202026-03-18%20at%2017.28.57.jpeg"
+          alt="Foto ambiente"
+        >
+        <img
+          class="img-front"
+          src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/pessoas.png"
+          alt="Equipe Espelhos Home"
+        >
+      </div>
+ 
+    </div>
+  </div>
 
     <section class="stats">
         <div class="stats-container">
