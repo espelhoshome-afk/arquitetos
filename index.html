@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
             --primary: #1a1a1a;
             --secondary: #2e3c23;
@@ -24,6 +25,7 @@
         }
 
         html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
         body {
             font-family: 'Montserrat', sans-serif;
             background: var(--light-bg);
@@ -32,7 +34,11 @@
             overflow-x: hidden;
         }
 
-        img { max-width: 100%; height: auto; display: block; }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
         h1 {
             font-family: 'Playfair Display', serif;
@@ -41,18 +47,21 @@
             line-height: 1.2;
             margin-bottom: 1.5rem;
         }
+
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.5rem, 4vw, 2.5rem);
             font-weight: 600;
             margin-bottom: 1.5rem;
         }
+
         h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
+
         p {
             font-size: 1rem;
             color: var(--text-secondary);
@@ -68,6 +77,7 @@
             z-index: 10000;
             border-bottom: 1px solid var(--border);
         }
+
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -76,6 +86,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
@@ -83,6 +94,7 @@
             color: var(--primary);
             text-decoration: none;
         }
+
         .logo span { color: var(--secondary); }
 
         .nav-links {
@@ -91,6 +103,7 @@
             align-items: center;
             list-style: none;
         }
+
         .nav-links a {
             text-decoration: none;
             color: var(--text-primary);
@@ -98,6 +111,7 @@
             font-weight: 400;
             transition: 0.3s;
         }
+
         .nav-links a:hover { color: var(--secondary); }
 
         .btn-primary {
@@ -111,6 +125,7 @@
             border: 1.5px solid var(--primary);
             display: inline-block;
         }
+
         .btn-primary:hover {
             background: transparent;
             color: var(--primary) !important;
@@ -125,7 +140,12 @@
             padding: 140px 1.5rem 60px;
             background: linear-gradient(135deg, var(--cream) 0%, #f8f6f3 100%);
         }
-        .hero-content { max-width: 900px; width: 100%; }
+
+        .hero-content {
+            max-width: 900px;
+            width: 100%;
+        }
+
         .hero-decorator {
             display: flex;
             align-items: center;
@@ -134,17 +154,20 @@
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
+
         .decorator-line {
             width: 60px;
             height: 2px;
             background: var(--secondary);
             flex-shrink: 0;
         }
+
         .hero-top-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 6vw, 3.5rem);
             font-weight: 600;
         }
+
         .hero-top-subtitle {
             font-size: 0.85rem;
             color: var(--text-secondary);
@@ -152,6 +175,7 @@
             text-transform: uppercase;
             margin-top: 1rem;
         }
+
         .hero-cta {
             display: flex;
             gap: 1rem;
@@ -159,6 +183,7 @@
             margin-top: 2.5rem;
             flex-wrap: wrap;
         }
+
         .hero-cta a {
             text-align: center;
             flex: 0 1 auto;
@@ -172,6 +197,7 @@
             border-radius: 2px;
             box-shadow: 0 20px 60px rgba(46,60,35,0.15);
         }
+
         .banner-content {
             max-width: 1400px;
             margin: 0 auto;
@@ -180,16 +206,20 @@
             gap: 3rem;
             align-items: center;
         }
+
         .banner-text h2 { color: white; }
+
         .banner-text p {
             color: rgba(255,255,255,0.9);
             margin-bottom: 2rem;
         }
+
         .banner-highlight {
             display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
         }
+
         .highlight-item {
             flex: 1;
             min-width: 130px;
@@ -197,25 +227,85 @@
             background: rgba(255,255,255,0.1);
             border-left: 2px solid var(--gold);
         }
+
         .highlight-item strong {
             display: block;
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
-        .banner-visual {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            align-items: stretch;
-        }
-        .banner-visual img {
+        /* Slider do banner */
+        .banner-visual.slider {
+            position: relative;
+            overflow: hidden;
             width: 100%;
-            height: 100%;
-            min-height: 260px;
+            border-radius: 2px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slides img {
+            min-width: 100%;
+            width: 100%;
+            min-height: 380px;
+            max-height: 420px;
             object-fit: cover;
             border-radius: 2px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.35);
+            color: white;
+            border: none;
+            width: 42px;
+            height: 42px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: 0.3s;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: rgba(0,0,0,0.65);
+        }
+
+        .prev { left: 12px; }
+        .next { right: 12px; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.45);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.1);
         }
 
         .stats {
@@ -224,6 +314,7 @@
             padding: 4rem 2rem;
             text-align: center;
         }
+
         .stats-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -231,6 +322,7 @@
             max-width: 1400px;
             margin: 0 auto;
         }
+
         .stat-number {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 5vw, 3rem);
@@ -250,13 +342,16 @@
             gap: 4rem;
             align-items: center;
         }
+
         .about-cocria-text {
             background: var(--cream);
             padding: 2.5rem;
             border-radius: 2px;
             margin-top: 1.5rem;
         }
+
         .about-cocria-visual { text-align: center; }
+
         .about-cocria-visual img {
             width: 100%;
             max-width: 420px;
@@ -270,10 +365,12 @@
             color: white;
             padding: 5rem 2rem;
         }
+
         .quem-somos-container {
             max-width: 1000px;
             margin: 0 auto;
         }
+
         .quem-somos-text {
             font-size: 1.1rem;
             line-height: 1.9;
@@ -281,33 +378,40 @@
             font-style: italic;
             margin-bottom: 1.5rem;
         }
+
         .quem-somos h2 { color: white; }
 
         .network-header {
             text-align: center;
             margin-bottom: 4rem;
         }
+
         .network-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2.5rem;
         }
+
         .network-card {
             border: 1px solid var(--border);
             transition: 0.4s;
             background: white;
         }
+
         .network-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 50px rgba(45,134,89,0.12);
         }
+
         .network-card-header {
             background: var(--secondary);
             padding: 2rem 1.5rem;
             color: white;
             font-weight: 500;
         }
+
         .network-card-body { padding: 2rem 1.5rem; }
+
         .network-card-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
@@ -319,14 +423,18 @@
             gap: 4rem;
             align-items: center;
         }
+
         .leader-image { text-align: center; }
+
         .leader-image img {
             width: 100%;
             max-width: 400px;
             border-radius: 4px;
             margin: 0 auto;
         }
+
         .leader-content p { margin-bottom: 1rem; }
+
         .leader-name {
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
@@ -341,12 +449,14 @@
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 2.5rem;
         }
+
         .benefit-item {
             padding: 2rem;
             border-left: 3px solid var(--secondary);
             background: white;
             transition: 0.3s;
         }
+
         .benefit-item:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 50px rgba(0,0,0,0.06);
@@ -358,6 +468,7 @@
             text-align: center;
             padding: 6rem 2rem;
         }
+
         .cta-section h2 { color: white; }
         .cta-section p { color: rgba(255,255,255,0.8); }
 
@@ -378,6 +489,7 @@
             margin-top: 3rem;
             color: #bbb;
         }
+
         .features-list span::before {
             content: '✦ ';
             color: var(--gold);
@@ -389,6 +501,7 @@
             padding: 3rem 2rem;
             text-align: center;
         }
+
         footer a {
             color: var(--gold);
             text-decoration: none;
@@ -404,6 +517,7 @@
             z-index: 10002;
             padding: 4px;
         }
+
         .nav-toggle span {
             width: 25px;
             height: 2px;
@@ -431,6 +545,7 @@
                 gap: 2rem;
                 z-index: 10001;
             }
+
             .nav-open .nav-links { right: 0; }
             .nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
             .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
@@ -439,25 +554,37 @@
             .hero { padding: 120px 1.5rem 50px; }
             .hero-decorator { gap: 1rem; }
             .decorator-line { width: 30px; }
-            .hero-cta { flex-direction: column; align-items: center; }
-            .hero-cta a { width: 100%; max-width: 300px; }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-cta a {
+                width: 100%;
+                max-width: 300px;
+            }
 
             .main-banner {
                 margin: 1.5rem;
                 padding: 2.5rem 1.5rem;
             }
+
             .banner-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
                 text-align: center;
             }
+
             .banner-visual {
                 order: -1;
-                grid-template-columns: 1fr;
             }
-            .banner-visual img {
+
+            .slides img {
                 min-height: 220px;
+                max-height: 260px;
             }
+
             .banner-highlight { flex-direction: column; }
             .highlight-item { text-align: left; }
 
@@ -466,8 +593,10 @@
                 gap: 2rem;
                 text-align: center;
             }
+
             .about-cocria-visual { order: -1; }
             .about-cocria-visual img { max-width: 280px; }
+
             .about-cocria-text {
                 text-align: left;
                 padding: 1.5rem;
@@ -481,6 +610,7 @@
                 gap: 2rem;
                 text-align: center;
             }
+
             .leader-image { order: -1; }
             .leader-image img { max-width: 260px; }
             .leader-content { text-align: left; }
@@ -500,6 +630,11 @@
         @media (max-width: 400px) {
             .stats-container { grid-template-columns: 1fr; }
             .about-cocria-visual img { max-width: 220px; }
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
         }
 
         body.nav-locked { overflow: hidden; }
@@ -510,7 +645,7 @@
     <nav id="siteNav">
         <div class="nav-container">
             <a href="#" class="logo">CO<span>.</span>cria</a>
-            <button class="nav-toggle" id="menuBtn" aria-label="Abrir menu">
+            <button class="nav-toggle" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-links" id="navLinks">
@@ -561,7 +696,8 @@
         <div class="quem-somos-container">
             <h2>Quem Somos</h2>
             <p class="quem-somos-text">A Espelhos Home nasceu com propósito de transformar ambientes através de peças exclusivas que unem design, qualidade e propósito.</p>
-            <p class="quem-somos-text">Mais do que produtos, oferecemos uma curadoria que valoriza a arquitetura e a criação de cenários que acolhem e inspiram.</p>
+            <p class="quem-somos-text">Mais do que produtos, oferecemos uma curadoria que valoriza a arquitetura e a criação de cenários que acolhem e inspiram.Trazendo ambientes querefletem histórias, estilos e emoções.
+</p>
         </div>
     </section>
 
@@ -575,9 +711,18 @@
                     <div class="highlight-item"><strong>1.2k+</strong><span>Projetos Realizados</span></div>
                 </div>
             </div>
-            <div class="banner-visual">
-                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/fotos.PNG" alt="Equipe Espelhos Home">
-                <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/WhatsApp%20Image%202026-03-18%20at%2017.28.57.jpeg" alt="Projeto Espelhos Home">
+
+            <div class="banner-visual slider">
+                <div class="slides" id="bannerSlides">
+                    <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/Design%20sem%20nome%20(60).png" alt="Equipe Espelhos Home 1">
+                    <img src="COLE_AQUI_A_IMAGEM_2" alt="Equipe Espelhos Home 2">
+                    <img src="COLE_AQUI_A_IMAGEM_3" alt="Equipe Espelhos Home 3">
+                </div>
+
+                <button class="slider-btn prev" id="prevSlide" aria-label="Imagem anterior">&#10094;</button>
+                <button class="slider-btn next" id="nextSlide" aria-label="Próxima imagem">&#10095;</button>
+
+                <div class="slider-dots" id="sliderDots"></div>
             </div>
         </div>
     </div>
@@ -678,6 +823,77 @@
                 menuBtn.setAttribute('aria-expanded', false);
             }
         });
+
+        const slides = document.getElementById('bannerSlides');
+        const images = slides.querySelectorAll('img');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+        const dotsContainer = document.getElementById('sliderDots');
+
+        let currentIndex = 0;
+        let autoSlide;
+
+        function createDots() {
+            images.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('slider-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.setAttribute('aria-label', `Ir para imagem ${index + 1}`);
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                    restartAutoSlide();
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll('.slider-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            if (index >= images.length) currentIndex = 0;
+            else if (index < 0) currentIndex = images.length - 1;
+            else currentIndex = index;
+
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots();
+        }
+
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentIndex - 1);
+        }
+
+        function startAutoSlide() {
+            autoSlide = setInterval(() => {
+                nextSlide();
+            }, 4000);
+        }
+
+        function restartAutoSlide() {
+            clearInterval(autoSlide);
+            startAutoSlide();
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            restartAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            restartAutoSlide();
+        });
+
+        createDots();
+        startAutoSlide();
     </script>
 </body>
 </html>
