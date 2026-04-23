@@ -234,7 +234,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Slider do banner */
         .banner-visual.slider {
             position: relative;
             overflow: hidden;
@@ -381,42 +380,6 @@
 
         .quem-somos h2 { color: white; }
 
-        .network-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .network-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .network-card {
-            border: 1px solid var(--border);
-            transition: 0.4s;
-            background: white;
-        }
-
-        .network-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(45,134,89,0.12);
-        }
-
-        .network-card-header {
-            background: var(--secondary);
-            padding: 2rem 1.5rem;
-            color: white;
-            font-weight: 500;
-        }
-
-        .network-card-body { padding: 2rem 1.5rem; }
-
-        .network-card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
         .leader-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -526,10 +489,114 @@
             display: block;
         }
 
+        .nrv-wrap { background: #f5f4f0; padding: 3rem 1.5rem; }
+        .nrv-header { text-align: center; margin-bottom: 2.5rem; }
+        .nrv-header h2 { font-size: 30px; font-weight: 700; color: #1a1a1a; letter-spacing: -0.3px; }
+        .nrv-header p { font-size: 14px; color: #666; margin-top: 10px; }
+        .nrv-section-block { background: #2d4a1e; color: #c8ddb2; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; padding: 10px 18px; border-radius: 8px 8px 0 0; display: inline-block; }
+        .nrv-section-body { background: #fff; border: 1px solid #e0ddd5; border-radius: 0 8px 8px 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .nrv-net-item { display: flex; gap: 14px; align-items: flex-start; }
+        .nrv-net-icon { font-size: 32px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+        .nrv-net-title { font-size: 18px; font-weight: 700; color: #1a1a1a; }
+        .nrv-net-desc { font-size: 13px; color: #666; margin-top: 5px; line-height: 1.55; }
+        .nrv-net-meta { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+        .nrv-badge { background: #eaf3de; color: #3a6a20; font-size: 11px; padding: 4px 10px; border-radius: 999px; font-weight: 500; }
+        .nrv-divider { border: none; border-top: 1px solid #e8e5de; margin: 1.25rem 0; }
+        .nrv-videos-label { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+        .nrv-videos-label span { font-size: 13px; font-weight: 600; color: #444; white-space: nowrap; }
+        .nrv-videos-label hr { flex: 1; border: none; border-top: 1px solid #e0ddd5; }
+        .nrv-videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            align-items: start;
+        }
+        .nrv-vid-card {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #e0ddd5;
+            background: #fff;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .nrv-vid-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .nrv-vid-thumb {
+            position: relative;
+            aspect-ratio: 9/16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #ddd;
+        }
+        .nrv-vid-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .nrv-vid-avatar { width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.18); display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700; color: #fff; border: 2px solid rgba(255,255,255,0.35); }
+        .nrv-play-btn { position: absolute; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center; transition: transform 0.15s; }
+        .nrv-vid-card:hover .nrv-play-btn { transform: scale(1.1); }
+        .nrv-play-tri { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 12px solid #2d4a1e; margin-left: 2px; }
+        .nrv-vid-dur { position: absolute; bottom: 7px; right: 8px; background: rgba(0,0,0,0.65); color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 4px; }
+        .nrv-vid-info { padding: 10px 12px 12px; }
+        .nrv-vid-name { font-size: 13px; font-weight: 700; color: #1a1a1a; }
+        .nrv-vid-city { font-size: 11px; color: #888; margin-top: 2px; }
+        .nrv-vid-topic { font-size: 11px; color: #3a6a20; font-weight: 600; margin-top: 6px; line-height: 1.4; }
+        .nrv-vid-views { font-size: 10px; color: #aaa; margin-top: 4px; }
+        .nrv-ver-mais { display: block; width: 100%; margin-top: 1.25rem; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background: #fff; font-size: 13px; color: #444; cursor: pointer; text-align: center; transition: background 0.15s; text-decoration: none; }
+        .nrv-ver-mais:hover { background: #f5f4f0; }
+
+        .nrv-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999999;
+        }
+        .nrv-modal.active { display: block; }
+        .nrv-modal-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.78);
+        }
+        .nrv-modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 420px;
+            margin: 36px auto;
+            z-index: 2;
+        }
+        .nrv-modal-video-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: #000;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+        }
+        .nrv-modal-video-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .nrv-modal-close {
+            position: absolute;
+            top: -14px;
+            right: -14px;
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 50%;
+            background: #fff;
+            color: #111;
+            font-size: 22px;
+            line-height: 34px;
+            text-align: center;
+            cursor: pointer;
+            z-index: 3;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+
         @media (max-width: 768px) {
             .nav-container { padding: 1rem 1.5rem; }
             .nav-toggle { display: flex; }
-
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -545,103 +612,50 @@
                 gap: 2rem;
                 z-index: 10001;
             }
-
             .nav-open .nav-links { right: 0; }
             .nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
             .nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
             .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
             .hero { padding: 120px 1.5rem 50px; }
             .hero-decorator { gap: 1rem; }
             .decorator-line { width: 30px; }
-
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-cta a {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .main-banner {
-                margin: 1.5rem;
-                padding: 2.5rem 1.5rem;
-            }
-
-            .banner-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .banner-visual {
-                order: -1;
-            }
-
-            .slides img {
-                min-height: 220px;
-                max-height: 260px;
-            }
-
+            .hero-cta { flex-direction: column; align-items: center; }
+            .hero-cta a { width: 100%; max-width: 300px; }
+            .main-banner { margin: 1.5rem; padding: 2.5rem 1.5rem; }
+            .banner-content { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .banner-visual { order: -1; }
+            .slides img { min-height: 220px; max-height: 260px; }
             .banner-highlight { flex-direction: column; }
             .highlight-item { text-align: left; }
-
-            .about-cocria-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
+            .about-cocria-container { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
             .about-cocria-visual { order: -1; }
             .about-cocria-visual img { max-width: 280px; }
-
-            .about-cocria-text {
-                text-align: left;
-                padding: 1.5rem;
-            }
-
+            .about-cocria-text { text-align: left; padding: 1.5rem; }
             .quem-somos { padding: 3.5rem 1.5rem; }
-            .network-grid { grid-template-columns: 1fr; }
-
-            .leader-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
+            .leader-container { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
             .leader-image { order: -1; }
             .leader-image img { max-width: 260px; }
             .leader-content { text-align: left; }
             .leader-name { text-align: center; }
-
             .benefits-grid { grid-template-columns: 1fr; }
             .stats-container { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
             .section { padding: 3.5rem 1.5rem; }
-
-            .features-list {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.75rem;
-            }
+            .features-list { flex-direction: column; align-items: center; gap: 0.75rem; }
+            .nrv-modal-content { width: 92%; margin: 20px auto; }
+            .nrv-modal-close { top: -10px; right: -6px; }
         }
 
         @media (max-width: 400px) {
             .stats-container { grid-template-columns: 1fr; }
             .about-cocria-visual img { max-width: 220px; }
-            .slider-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 16px;
-            }
+            .slider-btn { width: 36px; height: 36px; font-size: 16px; }
         }
 
-        body.nav-locked { overflow: hidden; }
+        body.nav-locked,
+        body.modal-open { overflow: hidden; }
     </style>
 </head>
 <body>
-
     <nav id="siteNav">
         <div class="nav-container">
             <a href="#" class="logo">CO<span>.</span>cria</a>
@@ -696,8 +710,7 @@
         <div class="quem-somos-container">
             <h2>Quem Somos</h2>
             <p class="quem-somos-text">A Espelhos Home nasceu com propósito de transformar ambientes através de peças exclusivas que unem design, qualidade e propósito.</p>
-            <p class="quem-somos-text">Mais do que produtos, oferecemos uma curadoria que valoriza a arquitetura e a criação de cenários que acolhem e inspiram.Trazendo ambientes querefletem histórias, estilos e emoções.
-</p>
+            <p class="quem-somos-text">Mais do que produtos, oferecemos uma curadoria que valoriza a arquitetura e a criação de cenários que acolhem e inspiram. Trazendo ambientes que refletem histórias, estilos e emoções.</p>
         </div>
     </section>
 
@@ -705,7 +718,7 @@
         <div class="banner-content">
             <div class="banner-text">
                 <h2>Parcerias com profissionais</h2>
-                <p>Faça parte de uma rede seleta de profissionais que transformam espaços com propósito e visão estratégica. A Experiência de Indicar com Segurança</p>
+                <p>Faça parte de uma rede seleta de profissionais que transformam espaços com propósito e visão estratégica. A experiência de indicar com segurança.</p>
                 <div class="banner-highlight">
                     <div class="highlight-item"><strong>500+</strong><span>Arquitetos Parceiros</span></div>
                     <div class="highlight-item"><strong>1.2k+</strong><span>Projetos Realizados</span></div>
@@ -715,7 +728,7 @@
             <div class="banner-visual slider">
                 <div class="slides" id="bannerSlides">
                     <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/Design%20sem%20nome%20(60).png" alt="Equipe Espelhos Home 1">
-                    <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/WhatsApp%20Image%202026-03-18%20at%2017.28.57.jpeg" alt="Equipe Espelhos Home 2">
+                    <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/WhatsApp%20Image%202026-04-15%20at%2015.48.27.jpeg" alt="Equipe Espelhos Home 2">
                     <img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/WhatsApp%20Image%202026-03-19%20at%2010.58.00.jpeg" alt="Equipe Espelhos Home 3">
                 </div>
 
@@ -736,17 +749,82 @@
     </section>
 
     <section class="section" id="network">
-        <div class="network-header">
-            <h2>Nossa Rede de Valor</h2>
-            <p>Conecte-se com profissionais de excelência e expanda seu portfólio.</p>
+        <div class="nrv-wrap">
+            <div class="nrv-header">
+                <h2>Nossa Rede de Valor</h2>
+                <p>Conecte-se com profissionais de excelência e expanda seu portfólio.</p>
+            </div>
+
+            <div class="nrv-section-block">Comunidade Profissional</div>
+            <div class="nrv-section-body">
+                <div class="nrv-net-item">
+                    <div class="nrv-net-icon">👥</div>
+                    <div>
+                        <div class="nrv-net-title">Networking Exclusivo</div>
+                        <div class="nrv-net-desc">Encontre-se com arquitetos de renome e crie parcerias que impulsionam sua carreira. Uma rede curada de profissionais que compartilham o mesmo padrão de excelência.</div>
+                        <div class="nrv-net-meta">
+                            <span class="nrv-badge">100+ arquitetos</span>
+                            <span class="nrv-badge">Comunidade ativa</span>
+                            <span class="nrv-badge">Projetos reais</span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="nrv-divider">
+
+                <div class="nrv-videos-label">
+                    <span>Arquitetos em destaque</span>
+                    <hr>
+                </div>
+
+                <div class="nrv-videos-grid">
+                    <div class="nrv-vid-card" onclick="openVideoModal('6y_rf2_CgN8')">
+                        <div class="nrv-vid-thumb">
+                            <img src="https://img.youtube.com/vi/6y_rf2_CgN8/hqdefault.jpg" alt="Shorts Espelhos Home">
+                            <div class="nrv-play-btn"><div class="nrv-play-tri"></div></div>
+                            <div class="nrv-vid-dur">Larissa Darly</div>
+                        </div>
+                        <div class="nrv-vid-info">
+                            <div class="nrv-vid-name">Larissa Darly</div>
+                            <div class="nrv-vid-city">Uberlandia / MG</div>
+                            <div class="nrv-vid-topic">Alem da Decoração</div>
+                            <div class="nrv-vid-views">Assistir vídeo</div>
+                        </div>
+                    </div>
+
+                   <div class="nrv-vid-card" onclick="openVideoModal('eWrfjOPDymg')">
+  <div class="nrv-vid-thumb">
+    <img src="https://img.youtube.com/vi/eWrfjOPDymg/hqdefault.jpg" alt="Vídeo Espelhos Home">
+    <div class="nrv-play-btn"><div class="nrv-play-tri"></div></div>
+    <div class="nrv-vid-dur">Viviane Coutinho</div>
+  </div>
+  <div class="nrv-vid-info">
+    <div class="nrv-vid-name">Viviane Coutinho</div>
+    <div class="nrv-vid-city">Uberlandia / MG</div>
+    <div class="nrv-vid-topic">Troca de experiencia</div>
+    <div class="nrv-vid-views">Assistir vídeo</div>
+  </div>
+</div>
+                    </div>
+
+                </div>
+
+                <a href="https://youtube.com/shorts/6y_rf2_CgN8" target="_blank" rel="noopener noreferrer" class="nrv-ver-mais">Ver todos os vídeos →</a>
+            </div>
         </div>
-        <div class="network-grid">
-            <div class="network-card">
-                <div class="network-card-header">Comunidade Profissional</div>
-                <div class="network-card-body">
-                    <div class="network-card-icon">👥</div>
-                    <h3>Networking Exclusivo</h3>
-                    <p>Encontre-se com arquitetos de renome e crie parcerias que impulsionam sua carreira.</p>
+
+        <div class="nrv-modal" id="nrvVideoModal" aria-hidden="true">
+            <div class="nrv-modal-overlay" onclick="closeVideoModal()"></div>
+            <div class="nrv-modal-content">
+                <button class="nrv-modal-close" onclick="closeVideoModal()" aria-label="Fechar vídeo">×</button>
+                <div class="nrv-modal-video-wrap">
+                    <iframe
+                        id="nrvVideoFrame"
+                        src=""
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -890,6 +968,32 @@
         prevBtn.addEventListener('click', () => {
             prevSlide();
             restartAutoSlide();
+        });
+
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('nrvVideoModal');
+            const frame = document.getElementById('nrvVideoFrame');
+
+            frame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1';
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('nrvVideoModal');
+            const frame = document.getElementById('nrvVideoFrame');
+
+            frame.src = '';
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeVideoModal();
+            }
         });
 
         createDots();
