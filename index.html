@@ -59,6 +59,8 @@ nav{position:fixed;top:0;width:100%;background:rgba(250,246,238,.97);backdrop-fi
 .slider-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2}
 .slider-dot{width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,.5);cursor:pointer}
 .slider-dot.active{background:#fff}
+.vslider{margin-top:0;max-width:440px;margin-left:auto;margin-right:auto}
+.vslider .slides img{height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:0;box-shadow:none}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.5rem}
 .three div{background:#fff;padding:1.5rem;text-align:center;color:var(--green);border-radius:8px}
 .journey{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:2.5rem}
@@ -189,6 +191,8 @@ body.locked{overflow:hidden}
 </section>
 
 <section class="section">
+<div class="split">
+<div>
 <span class="eyebrow">Público</span>
 <h2>Profissionais que transformam ambientes</h2>
 <p style="max-width:800px">O ENTRELUME foi criado para arquitetos, designers e profissionais que atuam na concepção, especificação ou execução de projetos de interiores.</p>
@@ -197,6 +201,21 @@ body.locked{overflow:hidden}
 <div class="card"><h3>Parceiros complementares</h3><p>Profissionais de móveis planejados, marcenaria, iluminação, reformas e outras áreas que participam da realização dos projetos.</p></div>
 </div>
 <p class="note">Cada perfil pode se relacionar com a Espelhos Home de maneira diferente, respeitando sua atuação e as condições do programa.</p>
+</div>
+<div class="media">
+<div class="slider vslider" id="pubSlider">
+<div class="slides">
+<img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/IMG_5456%20(1).JPEG" alt="Profissionais ENTRELUME 1">
+<img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/ENTRELUME_espelho.png" alt="Profissionais ENTRELUME 2">
+<img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/ENTRELUME-Bandeja.png" alt="Profissionais ENTRELUME 3">
+<img src="https://edfbalcysgvnzllpwzms.supabase.co/storage/v1/object/public/Rogeria/fotos/ENTRELUME-Quadro.png" alt="Profissionais ENTRELUME 4">
+</div>
+<button class="slider-btn prev" aria-label="Anterior">&#10094;</button>
+<button class="slider-btn next" aria-label="Próxima">&#10095;</button>
+<div class="slider-dots"></div>
+</div>
+</div>
+</div>
 </section>
 
 <section class="dark" id="pilares">
@@ -353,6 +372,17 @@ function restart(){clearInterval(timer);timer=setInterval(()=>go(cur+1),4000)}
 document.getElementById('next').onclick=()=>{go(cur+1);restart()};
 document.getElementById('prev').onclick=()=>{go(cur-1);restart()};
 restart();
+
+(function(){
+const root=document.getElementById('pubSlider'),track=root.querySelector('.slides'),n=track.children.length,box=root.querySelector('.slider-dots');
+let i=0,t;
+for(let k=0;k<n;k++){const d=document.createElement('button');d.className='slider-dot'+(k?'':' active');d.setAttribute('aria-label','Foto '+(k+1));d.onclick=()=>{go(k);rs()};box.appendChild(d)}
+function go(k){i=(k+n)%n;track.style.transform='translateX(-'+i*100+'%)';box.querySelectorAll('.slider-dot').forEach((d,x)=>d.classList.toggle('active',x===i))}
+function rs(){clearInterval(t);t=setInterval(()=>go(i+1),4500)}
+root.querySelector('.next').onclick=()=>{go(i+1);rs()};
+root.querySelector('.prev').onclick=()=>{go(i-1);rs()};
+rs();
+})();
 
 function openVideo(id){document.getElementById('frame').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1';const m=document.getElementById('modal');m.classList.add('active');m.setAttribute('aria-hidden','false');document.body.classList.add('locked')}
 function closeVideo(){document.getElementById('frame').src='';const m=document.getElementById('modal');m.classList.remove('active');m.setAttribute('aria-hidden','true');document.body.classList.remove('locked')}
